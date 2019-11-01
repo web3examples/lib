@@ -149,7 +149,7 @@ var slide=document.createElement("embed");
 slide.src="https://ipfs.infura.io/ipfs/QmawzPTovb1LUPGLd7LxKRpynzA6VsqnkCa16EZmkGvjGV#page=1&view=Fit&scrollbar=0"
 slide.type="application/pdf" 
 slide.width="200px" 
-slide.height="200px">
+//slide.height="200px"
 document.body.appendChild(slide);
 
 
