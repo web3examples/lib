@@ -165,7 +165,7 @@ function startVideo() {
 
 function stopVideo() {
     video.pause();
-    responsiveVoice.cancel();
+    StopSpeak();
 }
 
 
