@@ -191,7 +191,7 @@ var synth = window.speechSynthesis;
 function StartSpeak(text)
 {
    var utterThis = new SpeechSynthesisUtterance(text);
-   utterThis.voice = voices[15];
+   utterThis.voice = voices[14];
    synth.speak(utterThis);
   // responsiveVoice.speak(text) } 
 }
