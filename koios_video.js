@@ -184,24 +184,43 @@ CreateButton("Toggle audio",    ()=> { video.muted= !video.muted;} );
 CreateButton("25% smaller",     ()=> { video.style.height = 0.75 * parseFloat(video.style.height)+"%" } );
 CreateButton("25% larger",      ()=> { video.style.height = 1.25 * parseFloat(video.style.height)+"%" } );
 CreateButton("Full screen",     ()=> { video.requestFullscreen(); } );
-CreateButton("Voice comments",  ()=> { responsiveVoice.speak(document.getElementById("explain").innerText) } );
-CreateButton("Cancel voice",    ()=> { responsiveVoice.cancel() } );
+CreateButton("Voice comments",  ()=> { StartSpeak(document.getElementById("explain").innerText));
+CreateButton("Cancel voice",    ()=> { StopSpeak(); } );
 
+var voices = [];
+var synth = window.speechSynthesis;
 
+function StartSpeak(text)
+{
+   var utterThis = new SpeechSynthesisUtterance(text);
+   utterThis.voice = voices[15];
+   synth.speak(utterThis);
+  // responsiveVoice.speak(text) } 
+}
 
+function StopSpeak()
+{  synth.cancel();
+   //  responsiveVoice.cancel()
+}
 
-
+function populateVoiceList() {
+    voices = synth.getVoices();
+}
+                                      
+function InitSpeak()
+{ 
+  populateVoiceList();
+  if (speechSynthesis.onvoiceschanged !== undefined) {
+    speechSynthesis.onvoiceschanged = populateVoiceList;
+  }
+  // responsiveVoice.setDefaultVoice("Dutch Female");
+}
 
 var previous_colour=""
 var previous_row=-1;
 var table
 var tablediv
 var alldata=""
-
-
-
-
-
 
 async function asyncloaded() {
     console.log("Start koios_video.js");
@@ -213,10 +232,8 @@ async function asyncloaded() {
     LinkButton("start",startVideo);
     LinkButton("stop",stopVideo);
     
-    
-    	
-responsiveVoice.setDefaultVoice("Dutch Female");
-    
+    InitSpeak();
+    	    
     var transcript=document.getElementById("transcript").innerText;
     console.log(transcript);
     
