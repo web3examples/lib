@@ -145,6 +145,13 @@ video.addEventListener('error', videoerror, true);
 document.body.appendChild(video);
 
 
+var slide=document.createElement("embed");
+slide.src="https://ipfs.infura.io/ipfs/QmawzPTovb1LUPGLd7LxKRpynzA6VsqnkCa16EZmkGvjGV#page=2" 
+slide.type="application/pdf" 
+slide.width="200px" 
+slide.height="200px">
+document.body.appendChild(slide);
+
 
 video.addEventListener('timeupdate', (event) => {  // about 4x/second
   //console.log(video.currentTime);
