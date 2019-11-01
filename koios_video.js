@@ -150,6 +150,9 @@ slide.src="https://ipfs.infura.io/ipfs/QmawzPTovb1LUPGLd7LxKRpynzA6VsqnkCa16EZmk
 slide.type="application/pdf" 
 slide.width="200px" 
 //slide.height="200px"
+slide.objectFit="fill";
+slide.objectPosition="-250px";
+slide.zIndex="2";
 document.body.appendChild(slide);
 
 
