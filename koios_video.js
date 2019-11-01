@@ -184,7 +184,7 @@ CreateButton("Toggle audio",    ()=> { video.muted= !video.muted;} );
 CreateButton("25% smaller",     ()=> { video.style.height = 0.75 * parseFloat(video.style.height)+"%" } );
 CreateButton("25% larger",      ()=> { video.style.height = 1.25 * parseFloat(video.style.height)+"%" } );
 CreateButton("Full screen",     ()=> { video.requestFullscreen(); } );
-CreateButton("Voice comments",  ()=> { StartSpeak(document.getElementById("explain").innerText)); } );
+CreateButton("Voice comments",  ()=> { StartSpeak(document.getElementById("explain").innerText); } );
 CreateButton("Cancel voice",    ()=> { StopSpeak(); } );
 
 var voices = [];
