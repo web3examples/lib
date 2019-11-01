@@ -128,9 +128,7 @@ function VideoLocation() {
         document.getElementById(y.toString()).style.backgroundColor = "lightgray";
         //responsiveVoice.cancel();
         console.log(alldata[y].text);
-        responsiveVoice.speak(alldata[y].text);
-        
-        
+        StartSpeak(alldata[y].text);   
     }
 }   
 
