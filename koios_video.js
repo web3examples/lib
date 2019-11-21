@@ -1,3 +1,6 @@
+//  <script src='https://web3examples.com/lib/koios_video.js'></script>  
+
+
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
@@ -54,7 +57,7 @@ function rowclick(event) {
     var time=Number(alldata[id].start);
     if (isNaN(time)) time=0;
     video.currentTime=time/1000;
-    responsiveVoice.cancel();
+    //responsiveVoice.cancel();
     //console.log(alldata[id].text);
     
 }
@@ -142,8 +145,12 @@ video.style.height="200px";
 video.muted=true;  // otherwise not playing automatically
 //video.ontimeupdate = function() {VideoLocation()}; // call function when movie is at a different location
 video.addEventListener('error', videoerror, true);
-document.body.appendChild(video);
 
+vp=document.getElementById("videoplayer");
+console.log(vp.outerHTML);
+vp.appendChild(video);
+console.log("videoplayer");
+console.log(vp.outerHTML);
 
 var slide=document.createElement("embed");
 slide.src="https://ipfs.infura.io/ipfs/QmawzPTovb1LUPGLd7LxKRpynzA6VsqnkCa16EZmkGvjGV#page=1&view=Fit&scrollbar=0"
