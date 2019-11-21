@@ -1,6 +1,5 @@
-//  <script src='https://web3examples.com/lib/koios_video.js'></script>  
-
-
+// <script src='https://raw.githubusercontent.com/web3examples/lib/master/koios_video.js'></script>  
+// <script src='https://web3examples.com/lib/koios_video.js'></script>  
 
 var loadScriptAsync = function(uri){
   return new Promise((resolve, reject) => {
