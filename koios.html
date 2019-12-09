@@ -1,5 +1,14 @@
+Add button
 <link rel="manifest" href="manifest.webmanifest">
 <button class="add-button">Add to home screen</button>
+<style>
+  .add-button {
+  position: absolute;
+  top: 1px;
+  left: 1px;
+}
+</style>
+
 <script>
 let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
